@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Paperlift</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.5; max-width: 42rem; margin: 2rem auto; padding: 0 1.25rem; }
+  h1,h2,h3 { line-height: 1.25; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #8884; padding: 0.4rem 0.55rem; text-align: left; vertical-align: top; }
+  a { color: inherit; }
+  code { font-size: 0.92em; }
+  hr { border: none; border-top: 1px solid #8884; margin: 1.5rem 0; }
+  blockquote { margin: 0.75rem 0; padding-left: 1rem; border-left: 3px solid #8886; }
+</style>
+</head>
+<body>
+<h1>Privacy Policy — Paperlift</h1>
+<p><strong>Last updated:</strong> October 1, 2026<br>
+<strong>Effective date:</strong> October 1, 2026</p>
+<p><strong>Paperlift</strong> is operated by <strong>Alan Schaaf</strong>.<br>
+<strong>Contact:</strong> <a href="mailto:alanmschaaf@gmail.com">alanmschaaf@gmail.com</a><br>
+<strong>App:</strong> Paperlift (iOS)<br>
+<strong>Bundle identifier:</strong> <code>com.alanschaaf.Thermal</code></p>
+<p>This page describes how Paperlift handles data. It is written to match the shipping app on the App Store. It is not legal advice.</p>
+<hr>
+<h2>What Paperlift is</h2>
+<p>Paperlift is a local flying game for iPhone. You fly a paper plane, earn Paper currency, unlock folds, and chase scores and achievements. You do <strong>not</strong> create an account with us.</p>
+<p>Optional features:</p>
+<ul>
+<li><strong>Game Center</strong> (Apple) for scores and achievements</li>
+<li><strong>Rewarded video ads</strong> (Google AdMob) you choose to watch — <strong>Keep flying</strong> (revive after a crash) and <strong>Double Paper</strong></li>
+<li><strong>Soft ads</strong> (Google AdMob) — a <strong>banner</strong> on the death / results card, and an <strong>interstitial</strong> after some <strong>Fly again</strong> taps (not mid-flight, not on the title or Main Menu)</li>
+<li><strong>Local notifications</strong> (optional daily sky reminder)</li>
+</ul>
+<p>This shipped version has <strong>no in-app purchases</strong> (no Remove Ads product and no Paper packs).</p>
+<hr>
+<h2>Data we collect / process</h2>
+<p>We do <strong>not</strong> operate user accounts and we do <strong>not</strong> maintain a server-side profile of players.</p>
+<h3>1. Data that stays on your device (local only)</h3>
+<p>Stored with Apple’s <strong>UserDefaults</strong> on your device, for gameplay:</p>
+<ul>
+<li>High scores</li>
+<li>Paper currency</li>
+<li>Folds</li>
+<li>Daily streak</li>
+<li>Achievement progress</li>
+</ul>
+<p>This local save data does not leave the app unless you use Game Center or interact with ads (see below). Deleting the app deletes this local data (subject to any iCloud / device backups you manage yourself).</p>
+<p><strong>Privacy Manifest:</strong> the app declares UserDefaults access under Apple’s required-reason API category (CA92.1).</p>
+<h3>2. Analytics (on-device only)</h3>
+<p>Gameplay/analytics events are logged <strong>on-device</strong> via Apple’s <code>os_log</code> only. There is <strong>no remote analytics vendor</strong> in this shipped version. Nothing from that sink is sent to a third-party analytics service by Paperlift.</p>
+<h3>3. Apple — Game Center (optional)</h3>
+<p>If you sign in to <strong>Game Center</strong>, scores and achievements may be sent to <strong>Apple</strong>. That processing is governed by Apple’s privacy policy and Game Center terms. You can decline Game Center and still play.</p>
+<h3>4. Google AdMob — rewarded and soft ads</h3>
+<p>Paperlift uses <strong>Google AdMob</strong> for:</p>
+<table>
+<thead><tr><th>Type</th><th>When</th></tr></thead>
+<tbody>
+<tr><td>Rewarded video — Keep flying</td><td>Optional; you tap to revive after a crash (one revive per run)</td></tr>
+<tr><td>Rewarded video — Double Paper</td><td>Optional; you tap to double Paper earned that run</td></tr>
+<tr><td>Banner</td><td>Death / results card only (bottom of the screen)</td></tr>
+<tr><td>Interstitial</td><td>After some Fly again taps in a session (skip first few; never mid-flight; never on title / Main Menu / Endless unlock; skipped if you used a rewarded ad on that same death card)</td></tr>
+</tbody>
+</table>
+<p>Per Paperlift’s Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>):</p>
+<table>
+<thead><tr><th>Declared data type</th><th>Linked to identity</th><th>Used for tracking</th><th>Purpose</th></tr></thead>
+<tbody>
+<tr><td>Device ID</td><td>No</td><td>Yes</td><td>Third-party advertising</td></tr>
+<tr><td>Advertising Data</td><td>No</td><td>Yes</td><td>Third-party advertising</td></tr>
+</tbody>
+</table>
+<p><strong>Tracking:</strong> <code>NSPrivacyTracking</code> is <strong>true</strong>. Declared tracking domains include Google ad-related hosts (for example <code>googleads.g.doubleclick.net</code>, <code>pagead2.googlesyndication.com</code>, <code>www.googleadservices.com</code>).</p>
+<p>Google may process additional information in connection with serving, measuring, and limiting ads (for example advertising identifiers and ad interaction data), as described in Google’s policies. We do <strong>not</strong> sell your personal information.</p>
+<p><strong>Google privacy:</strong> <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+<hr>
+<h2>App Tracking Transparency (ATT)</h2>
+<p>On supported versions of iOS, Paperlift may request permission via Apple’s <strong>App Tracking Transparency</strong> prompt so AdMob can show more relevant / personalized ads. The in-app usage string is:</p>
+<blockquote><p>Paperlift uses this to show you more relevant ads.</p></blockquote>
+<p>The ATT prompt is requested around the <strong>first death / results card</strong> (not on launch or the title screen).</p>
+<ul>
+<li>You can tap <strong>Don’t Allow</strong> and still play. Optional rewarded ads can still work; they may be less personalized. Soft ads may still appear.</li>
+<li>Change later: <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</li>
+<li>If <strong>Allow Apps to Request to Track</strong> is off system-wide, iOS will not show the prompt (treated as denied).</li>
+</ul>
+<hr>
+<h2>Consent / UMP (where required)</h2>
+<p>Where required (for example in regions covered by Google’s consent requirements such as the EEA/UK), Paperlift uses Google’s <strong>User Messaging Platform (UMP)</strong> so you can make ad privacy choices. When privacy options are required, the in-app Privacy screen (under <strong>Folds / Store</strong>) can present <strong>Ad privacy choices</strong>.</p>
+<hr>
+<h2>Accounts and purchases</h2>
+<ul>
+<li><strong>No user accounts</strong> with Alan Schaaf / Paperlift.</li>
+<li><strong>No in-app purchases</strong> in this shipped version.</li>
+</ul>
+<hr>
+<h2>Children / age</h2>
+<p>Paperlift is a general-audience game and is <strong>not directed at children under 13</strong>. Because the app includes AdMob and declares tracking for third-party advertising, it is not intended for use by children under 13. If you are a parent or guardian and believe a child has provided information through the app in a way that concerns you, contact us at the email above.</p>
+<p>(We do not knowingly collect personal information from children under 13 for our own account systems — we do not operate accounts.)</p>
+<hr>
+<h2>Retention</h2>
+<ul>
+<li><strong>Local game data:</strong> retained on your device until you delete the app or clear app data.</li>
+<li><strong>Game Center:</strong> retained by Apple under Apple’s policies.</li>
+<li><strong>AdMob / Google:</strong> retained by Google under Google’s policies.</li>
+<li>We do not operate a separate Paperlift cloud database of player profiles.</li>
+</ul>
+<hr>
+<h2>Sharing</h2>
+<p>We share or enable sharing of data only as described above:</p>
+<ul>
+<li><strong>Apple</strong> (Game Center, if you use it; and Apple platform services generally)</li>
+<li><strong>Google</strong> (AdMob for rewarded and soft ads)</li>
+</ul>
+<p>We do <strong>not</strong> sell your personal information. We do not share local UserDefaults game saves with other companies for their independent marketing.</p>
+<hr>
+<h2>Security</h2>
+<p>We rely on Apple’s on-device storage for local saves and on Apple’s and Google’s security practices for their services. No method of electronic storage or transmission is 100% secure. Please use device passcodes / biometrics and keep iOS updated.</p>
+<hr>
+<h2>Your choices</h2>
+<table>
+<thead><tr><th>Choice</th><th>How</th></tr></thead>
+<tbody>
+<tr><td>Tracking / ATT</td><td>iOS Settings → Privacy &amp; Security → Tracking</td></tr>
+<tr><td>Limit ad personalization</td><td>ATT denial; device Limit Ad Tracking / related Apple settings; Google AdChoices on ads; UMP “Ad privacy choices” when shown</td></tr>
+<tr><td>Game Center</td><td>Sign out / don’t use Game Center in Settings or when prompted</td></tr>
+<tr><td>Notifications</td><td>iOS Settings → Notifications → Paperlift (or decline when asked)</td></tr>
+<tr><td>Report an ad</td><td>Use Google’s AdChoices / “Why this ad” controls on the ad; or report a problem via Apple</td></tr>
+<tr><td>Contact us</td><td>alanmschaaf@gmail.com</td></tr>
+</tbody>
+</table>
+<p>Deleting the app removes Paperlift’s local UserDefaults data on that device (backups aside).</p>
+<hr>
+<h2>California / EEA–UK (light)</h2>
+<p><strong>California:</strong> We do not sell personal information. Categories of data processed are described above (primarily on-device game state; Device ID and Advertising Data for third-party ads via Google; optional Game Center data via Apple). For questions or requests related to your information, email alanmschaaf@gmail.com. Because we do not maintain user accounts or a consumer profile database, some “access/delete” requests may be limited to guiding you to delete the app, adjust iOS/Game Center/ad settings, or contact Apple/Google for data they hold.</p>
+<p><strong>EEA/UK:</strong> Where Google’s consent / UMP flows apply, you will see consent and privacy-option UI. Our role for ad-related processing is as the app operator using Google AdMob; Google acts as described in its policies. Contact us at alanmschaaf@gmail.com with privacy questions. We have not appointed a separate DPO for this indie app; use the contact email above.</p>
+<hr>
+<h2>Changes</h2>
+<p>We may update this Privacy Policy from time to time. The <strong>Last updated</strong> date at the top will change when we do. Continued use of Paperlift after an update means you acknowledge the revised policy. Material changes may also be noted in the App Store listing or in-app where practical.</p>
+<hr>
+<h2>Contact</h2>
+<p><strong>Alan Schaaf</strong><br>
+Email: <a href="mailto:alanmschaaf@gmail.com">alanmschaaf@gmail.com</a><br>
+Subject line tip: <code>Paperlift privacy</code></p>
+</body>
+</html>
