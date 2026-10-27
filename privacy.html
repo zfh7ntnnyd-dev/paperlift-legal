@@ -18,8 +18,8 @@
 </head>
 <body>
 <h1>Privacy Policy — Paperlift</h1>
-<p><strong>Last updated:</strong> October 1, 2026<br>
-<strong>Effective date:</strong> October 1, 2026</p>
+<p><strong>Last updated:</strong> October 26, 2026<br>
+<strong>Effective date:</strong> October 26, 2026</p>
 <p><strong>Paperlift</strong> is operated by <strong>Alan Schaaf</strong>.<br>
 <strong>Contact:</strong> <a href="mailto:alanmschaaf@gmail.com">alanmschaaf@gmail.com</a><br>
 <strong>App:</strong> Paperlift (iOS)<br>
@@ -27,31 +27,36 @@
 <p>This page describes how Paperlift handles data. It is written to match the shipping app on the App Store. It is not legal advice.</p>
 <hr>
 <h2>What Paperlift is</h2>
-<p>Paperlift is a local flying game for iPhone. You fly a paper plane, earn Paper currency, unlock folds, and chase scores and achievements. You do <strong>not</strong> create an account with us.</p>
+<p>Paperlift is a local flying game for iPhone. You fly a paper plane, earn XP and level up, unlock planes (folds) and contrails, and chase scores and achievements. You do <strong>not</strong> create an account with us.</p>
 <p>Optional features:</p>
 <ul>
 <li><strong>Game Center</strong> (Apple) for scores and achievements</li>
-<li><strong>Rewarded video ads</strong> (Google AdMob) you choose to watch — <strong>Continue flying</strong> (revive after a crash) and <strong>Double Paper</strong></li>
+<li><strong>Rewarded video ads</strong> (Google AdMob) you choose to watch — <strong>Continue Flying +1UP</strong> (the “Continue + 1UP” button: keep flying after a crash) and <strong>Double XP</strong> (the “Double it” button: double the XP from that run)</li>
 <li><strong>Soft ads</strong> (Google AdMob) — a <strong>banner</strong> on the death / results card, and an <strong>interstitial</strong> after some <strong>Fly again</strong> taps (not mid-flight, not on the title or Main Menu)</li>
-<li><strong>Local notifications</strong> (optional daily sky reminder)</li>
+<li><strong>Local notifications</strong> (optional) — a daily sky reminder, a Mystery Box reminder, and a notice when you lose a top-3 spot on today’s leaderboard. They are scheduled on your device.</li>
 </ul>
-<p>This shipped version has <strong>no in-app purchases</strong> (no Remove Ads product and no Paper packs).</p>
+<p>This shipped version offers <strong>no in-app purchases</strong> (no Remove Ads product and no Paper packs). The app only checks for an earlier Gold Leaf purchase so it can restore that plane.</p>
 <hr>
 <h2>Data we collect / process</h2>
 <p>We do <strong>not</strong> operate user accounts and we do <strong>not</strong> maintain a server-side profile of players.</p>
 <h3>1. Data that stays on your device (local only)</h3>
 <p>Stored with Apple’s <strong>UserDefaults</strong> on your device, for gameplay:</p>
 <ul>
-<li>High scores</li>
-<li>Paper currency</li>
-<li>Folds</li>
+<li>High scores and daily best</li>
+<li>XP and level</li>
+<li>Paper balance (from earlier versions)</li>
+<li>Planes (folds) and contrails</li>
 <li>Daily streak</li>
 <li>Achievement progress</li>
+<li>Mystery Box progress</li>
+<li>Your recent position on today’s Game Center leaderboard (cached for the title screen)</li>
+<li>Small app settings, such as whether you were already asked about reminders</li>
 </ul>
-<p>This local save data does not leave the app unless you use Game Center or interact with ads (see below). Deleting the app deletes this local data (subject to any iCloud / device backups you manage yourself).</p>
+<p>Paperlift does not send these saves to us or to ad companies. If you use Game Center, your scores and achievements are sent to Apple (section 3). The ad and measurement SDKs in sections 4 and 5 collect their own data, described there. Deleting the app deletes this local data (subject to any iCloud / device backups you manage yourself).</p>
 <p><strong>Privacy Manifest:</strong> the app declares UserDefaults access under Apple’s required-reason API category (CA92.1).</p>
-<h3>2. Analytics (on-device only)</h3>
-<p>Gameplay/analytics events are logged <strong>on-device</strong> via Apple’s <code>os_log</code> only. There is <strong>no remote analytics vendor</strong> in this shipped version. Nothing from that sink is sent to a third-party analytics service by Paperlift.</p>
+<h3>2. Analytics and measurement</h3>
+<p>Paperlift’s own gameplay logs (for example, a run starting or ending) are written <strong>on-device</strong> with Apple’s <code>os_log</code>. Paperlift does not send them anywhere.</p>
+<p>The app does include two SDKs that send data off the device. <strong>Google AdMob</strong> measures the ads it serves (section 4). <strong>Meta’s Facebook SDK</strong> measures installs and app opens for Paperlift’s Facebook and Instagram ad campaigns (section 5). Both are declared in the app’s Privacy Manifest (section 6), including <strong>Product Interaction</strong> data used for analytics.</p>
 <h3>3. Apple — Game Center (optional)</h3>
 <p>If you sign in to <strong>Game Center</strong>, scores and achievements may be sent to <strong>Apple</strong>. That processing is governed by Apple’s privacy policy and Game Center terms. You can decline Game Center and still play.</p>
 <h3>4. Google AdMob — rewarded and soft ads</h3>
@@ -59,36 +64,49 @@
 <table>
 <thead><tr><th>Type</th><th>When</th></tr></thead>
 <tbody>
-<tr><td>Rewarded video — Continue flying</td><td>Optional; you tap to revive after a crash (one revive per run)</td></tr>
-<tr><td>Rewarded video — Double Paper</td><td>Optional; you tap to double Paper earned that run</td></tr>
+<tr><td>Rewarded video — Continue Flying +1UP</td><td>Optional; you tap “Continue + 1UP” to keep flying after a crash (once per run)</td></tr>
+<tr><td>Rewarded video — Double XP</td><td>Optional; you tap “Double it” to double the XP earned that run (once per run, only when the run earned XP)</td></tr>
 <tr><td>Banner</td><td>Death / results card only (bottom of the screen)</td></tr>
-<tr><td>Interstitial</td><td>After some Fly again taps in a session (skip first few; never mid-flight; never on title / Main Menu / Endless unlock; skipped if you used a rewarded ad on that same death card)</td></tr>
+<tr><td>Interstitial</td><td>On every 4th Fly again tap in a session (never mid-flight; never on title / Main Menu / Endless unlock; skipped if you earned a rewarded ad on that same death card; the count starts over after any rewarded ad you earn)</td></tr>
 </tbody>
 </table>
-<p>Per Paperlift’s Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>):</p>
+<p>Google may process additional information in connection with serving, measuring, and limiting ads (for example advertising identifiers and ad interaction data), as described in Google’s policies. We do <strong>not</strong> sell your personal information.</p>
+<p><strong>Google privacy:</strong> <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+<h3>5. Meta (Facebook SDK) — install measurement</h3>
+<p>Paperlift includes Meta’s Facebook SDK (FacebookCore) to measure its install ads on Facebook and Instagram. Paperlift does not show Meta ads, and there is no Facebook login.</p>
+<ul>
+<li><strong>App events:</strong> the SDK automatically logs app installs and app opens, and Paperlift logs one “Completed tutorial” event on your first launch.</li>
+<li><strong>Apple SKAdNetwork and Meta Aggregated Event Measurement:</strong> used to measure installs without the advertising identifier. If you open Paperlift from a Facebook or Instagram ad link, that link is passed to Meta’s SDK.</li>
+<li><strong>Advertising identifier (IDFA):</strong> collection is off by default. It is turned on only if you allow tracking in the App Tracking Transparency prompt and, where Google’s consent rules apply, your consent choices allow ads.</li>
+<li><strong>Limited Data Use:</strong> where consent is required and you have not given it, Paperlift also turns on Meta’s Limited Data Use option.</li>
+</ul>
+<p>Meta may process additional information it receives with these events (for example device and network information), as described in Meta’s policies. We do <strong>not</strong> sell your personal information.</p>
+<p><strong>Meta privacy:</strong> <a href="https://www.facebook.com/privacy/policy/">https://www.facebook.com/privacy/policy/</a></p>
+<h3>6. Privacy Manifest and App Store privacy details</h3>
+<p>Per Paperlift’s Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>), covering the Google AdMob and Meta SDKs above:</p>
 <table>
 <thead><tr><th>Declared data type</th><th>Linked to identity</th><th>Used for tracking</th><th>Purpose</th></tr></thead>
 <tbody>
-<tr><td>Device ID</td><td>No</td><td>Yes</td><td>Third-party advertising</td></tr>
+<tr><td>Device ID</td><td>No</td><td>Yes</td><td>Third-party advertising; Analytics</td></tr>
 <tr><td>Advertising Data</td><td>No</td><td>Yes</td><td>Third-party advertising</td></tr>
+<tr><td>Product Interaction (for example, app launches)</td><td>No</td><td>Yes</td><td>Third-party advertising; Analytics</td></tr>
 </tbody>
 </table>
-<p><strong>Tracking:</strong> <code>NSPrivacyTracking</code> is <strong>true</strong>. Declared tracking domains include Google ad-related hosts (for example <code>googleads.g.doubleclick.net</code>, <code>pagead2.googlesyndication.com</code>, <code>www.googleadservices.com</code>).</p>
-<p>Google may process additional information in connection with serving, measuring, and limiting ads (for example advertising identifiers and ad interaction data), as described in Google’s policies. We do <strong>not</strong> sell your personal information.</p>
-<p><strong>Google privacy:</strong> <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a></p>
+<p><strong>Tracking:</strong> <code>NSPrivacyTracking</code> is <strong>true</strong>. Declared tracking domains are Google ad hosts (<code>googleads.g.doubleclick.net</code>, <code>pagead2.googlesyndication.com</code>, <code>www.googleadservices.com</code>) and Meta (<code>ep1.facebook.com</code>).</p>
+<p>The App Store privacy details for Paperlift list the same three data types, used for tracking and not linked to your identity, with Google and Meta as the third parties.</p>
 <hr>
 <h2>App Tracking Transparency (ATT)</h2>
-<p>On supported versions of iOS, Paperlift may request permission via Apple’s <strong>App Tracking Transparency</strong> prompt so AdMob can show more relevant / personalized ads. The in-app usage string is:</p>
+<p>On supported versions of iOS, Paperlift may request permission via Apple’s <strong>App Tracking Transparency</strong> prompt so AdMob can show more relevant / personalized ads and so Meta’s SDK can use the advertising identifier for install measurement. The in-app usage string is:</p>
 <blockquote><p>Paperlift uses this to show you more relevant ads.</p></blockquote>
 <p>The ATT prompt is requested around the <strong>first death / results card</strong> (not on launch or the title screen).</p>
 <ul>
-<li>You can tap <strong>Don’t Allow</strong> and still play. Optional rewarded ads can still work; they may be less personalized. Soft ads may still appear.</li>
+<li>You can tap <strong>Don’t Allow</strong> and still play. Optional rewarded ads can still work; they may be less personalized. Soft ads may still appear. Meta’s SDK does not collect the advertising identifier; install measurement uses SKAdNetwork and Aggregated Event Measurement instead.</li>
 <li>Change later: <strong>iOS Settings → Privacy &amp; Security → Tracking</strong>.</li>
 <li>If <strong>Allow Apps to Request to Track</strong> is off system-wide, iOS will not show the prompt (treated as denied).</li>
 </ul>
 <hr>
 <h2>Consent / UMP (where required)</h2>
-<p>Where required (for example in regions covered by Google’s consent requirements such as the EEA/UK), Paperlift uses Google’s <strong>User Messaging Platform (UMP)</strong> so you can make ad privacy choices. When privacy options are required, the in-app Privacy screen (under <strong>Folds / Store</strong>) can present <strong>Ad privacy choices</strong>.</p>
+<p>Where required (for example in regions covered by Google’s consent requirements such as the EEA/UK), Paperlift uses Google’s <strong>User Messaging Platform (UMP)</strong> so you can make ad privacy choices. The consent form, when required, is shown on the title screen. When privacy options are required, the in-app Privacy screen (on the <strong>Edit plane</strong> screen) shows <strong>Ad privacy choices</strong> so you can change them. Your consent choices also limit Meta’s SDK as described in section 5.</p>
 <hr>
 <h2>Accounts and purchases</h2>
 <ul>
@@ -97,7 +115,7 @@
 </ul>
 <hr>
 <h2>Children / age</h2>
-<p>Paperlift is a general-audience game and is <strong>not directed at children under 13</strong>. Because the app includes AdMob and declares tracking for third-party advertising, it is not intended for use by children under 13. If you are a parent or guardian and believe a child has provided information through the app in a way that concerns you, contact us at the email above.</p>
+<p>Paperlift is a general-audience game and is <strong>not directed at children under 13</strong>. Because the app includes AdMob and Meta’s SDK and declares tracking for third-party advertising, it is not intended for use by children under 13. If you are a parent or guardian and believe a child has provided information through the app in a way that concerns you, contact us at the email above.</p>
 <p>(We do not knowingly collect personal information from children under 13 for our own account systems — we do not operate accounts.)</p>
 <hr>
 <h2>Retention</h2>
@@ -105,7 +123,8 @@
 <li><strong>Local game data:</strong> retained on your device until you delete the app or clear app data.</li>
 <li><strong>Game Center:</strong> retained by Apple under Apple’s policies.</li>
 <li><strong>AdMob / Google:</strong> retained by Google under Google’s policies.</li>
-<li>We do not operate a separate Paperlift cloud database of player profiles.</li>
+<li><strong>Meta:</strong> retained by Meta under Meta’s policies.</li>
+<li>We do not operate a Paperlift server or cloud database of player data.</li>
 </ul>
 <hr>
 <h2>Sharing</h2>
@@ -113,17 +132,18 @@
 <ul>
 <li><strong>Apple</strong> (Game Center, if you use it; and Apple platform services generally)</li>
 <li><strong>Google</strong> (AdMob for rewarded and soft ads)</li>
+<li><strong>Meta</strong> (Facebook SDK for install and app-open measurement)</li>
 </ul>
 <p>We do <strong>not</strong> sell your personal information. We do not share local UserDefaults game saves with other companies for their independent marketing.</p>
 <hr>
 <h2>Security</h2>
-<p>We rely on Apple’s on-device storage for local saves and on Apple’s and Google’s security practices for their services. No method of electronic storage or transmission is 100% secure. Please use device passcodes / biometrics and keep iOS updated.</p>
+<p>We rely on Apple’s on-device storage for local saves and on Apple’s, Google’s and Meta’s security practices for their services. No method of electronic storage or transmission is 100% secure. Please use device passcodes / biometrics and keep iOS updated.</p>
 <hr>
 <h2>Your choices</h2>
 <table>
 <thead><tr><th>Choice</th><th>How</th></tr></thead>
 <tbody>
-<tr><td>Tracking / ATT</td><td>iOS Settings → Privacy &amp; Security → Tracking</td></tr>
+<tr><td>Tracking / ATT</td><td>iOS Settings → Privacy &amp; Security → Tracking (also controls whether Meta’s SDK collects the advertising identifier)</td></tr>
 <tr><td>Limit ad personalization</td><td>ATT denial; iOS Settings → Privacy &amp; Security → Tracking / Apple Advertising; Google AdChoices on ads; UMP “Ad privacy choices” when shown</td></tr>
 <tr><td>Game Center</td><td>Sign out / don’t use Game Center in Settings or when prompted</td></tr>
 <tr><td>Notifications</td><td>iOS Settings → Notifications → Paperlift (or decline when asked)</td></tr>
@@ -134,8 +154,8 @@
 <p>Deleting the app removes Paperlift’s local UserDefaults data on that device (backups aside).</p>
 <hr>
 <h2>California / EEA–UK (light)</h2>
-<p><strong>California:</strong> We do not sell personal information. Categories of data processed are described above (primarily on-device game state; Device ID and Advertising Data for third-party ads via Google; optional Game Center data via Apple). For questions or requests related to your information, email alanmschaaf@gmail.com. Because we do not maintain user accounts or a consumer profile database, some “access/delete” requests may be limited to guiding you to delete the app, adjust iOS/Game Center/ad settings, or contact Apple/Google for data they hold.</p>
-<p><strong>EEA/UK:</strong> Where Google’s consent / UMP flows apply, you will see consent and privacy-option UI. Our role for ad-related processing is as the app operator using Google AdMob; Google acts as described in its policies. Contact us at alanmschaaf@gmail.com with privacy questions. We have not appointed a separate DPO for this indie app; use the contact email above.</p>
+<p><strong>California:</strong> We do not sell personal information. Categories of data processed are described above (primarily on-device game state; Device ID, Advertising Data and Product Interaction for third-party advertising and analytics via Google and Meta; optional Game Center data via Apple). For questions or requests related to your information, email alanmschaaf@gmail.com. Because we do not maintain user accounts or a consumer profile database, some “access/delete” requests may be limited to guiding you to delete the app, adjust iOS/Game Center/ad settings, or contact Apple/Google/Meta for data they hold.</p>
+<p><strong>EEA/UK:</strong> Where Google’s consent / UMP flows apply, you will see consent and privacy-option UI. Our role for ad-related processing is as the app operator using Google AdMob and Meta’s SDK; Google and Meta act as described in their policies. Contact us at alanmschaaf@gmail.com with privacy questions. We have not appointed a separate DPO for this indie app; use the contact email above.</p>
 <hr>
 <h2>Changes</h2>
 <p>We may update this Privacy Policy from time to time. The <strong>Last updated</strong> date at the top will change when we do. Continued use of Paperlift after an update means you acknowledge the revised policy. Material changes may also be noted in the App Store listing or in-app where practical.</p>
